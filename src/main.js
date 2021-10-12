@@ -7,6 +7,12 @@ const store =createStore({
      return{ //this is the state of our application so thi object hold the application wide data
  counter:0
      };
+ },
+ mutations:{
+     increment(state){ //takes an object where you can define methods
+        //it automatically get the current state as an argument,this is guranteed by vuex.
+        state.counter =state.counter + 1;//so now if we have to change our logic we'll simply change here
+     }
  }
 });
 const app = createApp(App);
