@@ -2,7 +2,7 @@
   <base-container title="Vuex">
   <!--  $store this property point at the vuex store and state property points at the state managed by the store -->
   <the-counter></the-counter>
-  <button @click ="addOne">Add 1</button>
+  <button @click ="addOne">Add 10</button>
   <change-counter></change-counter>
   </base-container>
 </template>
@@ -20,8 +20,12 @@ export default {
   },
 
   methods:{
-    addOne(){
-   this.$store.commit('increment');
+    addOne(){//payload extra data can be passed
+  // this.$store.commit('increase',{ value:10 });
+  this.$store.commit({
+    type: 'increase',
+    value:10
+  });
     }
   }
 };
