@@ -23,8 +23,8 @@ export default {
 
   methods:{
     addOne(){//payload extra data can be passed
-  // this.$store.commit('increase',{ value:10 });
-  this.$store.commit({
+  // this.$store.commit('increase',{ value:10 });// we can also use dispatch
+  this.$store.dispatch({
     type: 'increase',
     value:10
   });

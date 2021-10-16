@@ -9,14 +9,26 @@ const store = createStore({
      };
  },
  mutations:{
-     increment(state){ //takes an object where you can define methods
-        //it automatically get the current state as an argument,this is guranteed by vuex.
-        state.counter =state.counter + 1;//so now if we have to change our logic we'll simply change here
+     increment(state){ 
+        // setTimeout(function(){
+            state.counter =state.counter + 1;//so now if we have to change our logic we'll simply change here
+        // },2000)//this will work but this is a wrong pracice. so you have a better concept for working with asynchronous code which is "Actions"
+       
      },
      increase(state,payload){//payload (name is upto you)can be anything string,number,object
        // this.$store.commit('increment');
         state.counter = state.counter + payload.value ; //want to increase by avalue which can be difened when this mutation is commited.
     
+     }
+ },
+ action:{
+     increment(context){
+        setTimeout(function(){
+      context.commit('increment' );
+     },2000);
+     },
+     increase(context, payload){
+         context.commit('increase' , payload);
      }
  },
  getters:{//every getter is a method right now.
