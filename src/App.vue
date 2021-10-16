@@ -2,6 +2,7 @@
   <base-container title="Vuex">
   <!--  $store this property point at the vuex store and state property points at the state managed by the store -->
   <the-counter></the-counter>
+  <favourite-value></favourite-value> 
   <button @click ="addOne">Add 10</button>
   <change-counter></change-counter>
   </base-container>
@@ -10,13 +11,14 @@
 <script>
 import BaseContainer from './components/BaseContainer.vue';
 import TheCounter from "./components/TheCounter.vue";
-import ChangeCounter from "./components/ChangeCounter.vue"
+import ChangeCounter from "./components/ChangeCounter.vue";
+import FavouriteValue from './components/FavouriteValue.vue';
 export default {
-
-  components: {
+ components: {
     BaseContainer,
     TheCounter,
-    ChangeCounter
+    ChangeCounter,
+    FavouriteValue
   },
 
   methods:{
